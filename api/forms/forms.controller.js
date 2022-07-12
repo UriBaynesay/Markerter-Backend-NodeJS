@@ -28,11 +28,13 @@ async function getFroms(req, res) {
 async function addForm(req, res) {
   try {
     const form = req.body
+    const isEmailUsed=await formsService.getByEmail(form.email)
+    if(isEmailUsed!==null) throw 'email already in use'
     const savedForm = await formsService.add(form)
     res.send(savedForm)
   } catch (err) {
     logger.error("Failed to add form", err)
-    res.status(500).send("Failed to add form")
+    res.status(500).send("Failed to add form "+err)
   }
 }
 
