@@ -1,0 +1,20 @@
+{
+  "name": "markerter-server",
+  "version": "1.0.0",
+  "description": "production ready server",
+  "main": "server.js",
+  "scripts": {
+    "start": "set NODE_ENV=production&&node server.js",
+    "server:dev": "set NODE_ENV=development&&nodemon server.js"
+  },
+  "author": "Uri",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongodb": "^3.2.7"
+  },
+  "devDependencies": {
+    "nodemon": "1.18.10"
+  }
+}
